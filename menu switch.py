@@ -1,4 +1,4 @@
-# menù
+# menù da copiare
 
 scelta = 'ok'
 
