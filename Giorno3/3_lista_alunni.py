@@ -30,6 +30,7 @@ class ListaAlunni:
 
 # creo classe per visualizzare alunno, modificare il voto o aggiungerlo 
 class Alunno(ListaAlunni):
+    
     def __init__(self, lista):
         super().__init__()
         self.alunni = lista.alunni
@@ -59,9 +60,6 @@ class Alunno(ListaAlunni):
         else:
             print("Alunno non presente nella lista.")
 
-
-
-
 lista_alunni = ListaAlunni()
 print("Benvenuto!")
 while True:
@@ -88,8 +86,8 @@ while True:
                 print("Inserire voto", j+1, ": ")
                 voto_alunno = float(input(""))
                 if voto_alunno > 10 or voto_alunno <= 0:
-                    print("Non puoi inserire ", voto_alunno, "come voto! Verrà messo 0 in automatico... Poi modificalo!")
-                    lista_alunni.aggiungi_voto(nome_alunno, 0)
+                    print("Non puoi inserire ", voto_alunno, "come voto! Verrà messo 'errore' in automatico... Poi modificalo!")
+                    lista_alunni.aggiungi_voto(nome_alunno, 'errore')
                 else:
                     lista_alunni.aggiungi_voto(nome_alunno, voto_alunno)
 
@@ -129,6 +127,9 @@ while True:
                         else:
                             # errore
                             print("Scelta non valida! Riprova")
+                else:
+                    # errore
+                    print("Scelta non valida! Riprova")
             else:
                 # errore
                 print("Scelta non valida! Riprova")
