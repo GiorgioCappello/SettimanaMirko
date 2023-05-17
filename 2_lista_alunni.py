@@ -1,11 +1,11 @@
-# CREARE UNA CLASSE LISTAALLUNNI, che dovrà essere sempre valorizzata appena si accede al primo menu,  
+# CREARE UNA CLASSE LISTAalunni, che dovrà essere sempre valorizzata appena si accede al primo menu,  
 # Un primo menu con entra o esci, se esci si chiude tutto, 
 # se entri devi darmi X nomi obbligatori e X corrispettivi voti agli studenti, 
 # L'esericizio sarà creare un sistema che permetta di andare a scegliere un singolo utente e, creando 
 # una nuova classe con ereditarietà, di modificare e aggiungere i suoi voti 
 
 
-# creo classe ListaAlunni con all'inerno aggiungi alunno, aggiungi voto
+# creo classe ListaAlunni con all'inerno aggiungi alunno, aggiungi voto, visualizzo elenco
 class ListaAlunni:
     
     def __init__(self):
@@ -20,8 +20,45 @@ class ListaAlunni:
         else:
             print("Alunno non presente nella lisa!")
 
-    
-# creo classe per visualizzare alunno e modificare il voto
+    def visualizzo_elenco(self):
+        print("\nElenco alunni: ")
+        for nome,voti in self.alunni.items():
+            print("Nome: ", nome)
+            print("Voti: ", voti)
+            print()
+
+
+# creo classe per visualizzare alunno, modificare il voto o aggiungerlo 
+class Alunno(ListaAlunni):
+    def __init__(self, lista):
+        super().__init__()
+        self.alunni = lista.alunni
+
+    def modifica_voto(self, nome, indice, voto):
+        if nome in self.alunni:
+            if indice < len(self.alunni[nome]):
+                self.alunni[nome][indice] = voto
+                self.visualizza_alunno(nome)
+            else:
+                print("Indice del voto non valido.")
+        else:
+            print("Alunno non presente nella lista.")
+
+    def aggiungi_voto2(self, nome, nuovo_voto):
+        if nome in self.alunni:
+            self.alunni[nome].append(nuovo_voto)
+            self.visualizza_alunno(nome)
+        else:
+            print("Allunno non presente nella lista.")
+
+    def visualizza_alunno(self, nome):
+        if nome in self.alunni:
+            print("Voti di", nome, ":")
+            for voto in self.alunni[nome]:
+                print(voto)
+        else:
+            print("Alunno non presente nella lista.")
+
 
 
 
@@ -50,11 +87,52 @@ while True:
             for j in range(num_voti_alunno):
                 print("Inserire voto", j+1, ": ")
                 voto_alunno = float(input(""))
-                lista_alunni.aggiungi_voto(voto_alunno)
-    
+                if voto_alunno > 10 or voto_alunno <= 0:
+                    print("Non puoi inserire ", voto_alunno, "come voto! Verrà messo 0 in automatico... Poi modificalo!")
+                    lista_alunni.aggiungi_voto(nome_alunno, 0)
+                else:
+                    lista_alunni.aggiungi_voto(nome_alunno, voto_alunno)
+
+        lista_alunni.visualizzo_elenco()
+
+        # chiedo se si vuole modificare un voto
+        while True:
+            scelta_alunno = input("Vuoi selezionare un alunno? (si o no): ")
+
+            if scelta_alunno == 'no':
+                break
+            elif scelta_alunno == 'si':
+                nome_selezionato = input("Inserisci il nome dell'alunno da selezionare: ")
+
+                # creo la classe alunno
+                alunno = Alunno(lista_alunni)
+                alunno.visualizza_alunno(nome_selezionato)
+                
+                # se l'alunno esiste chiedo di modificare o aggiungere
+                if nome_selezionato in lista_alunni.alunni:
+                    while True:
+                        scelta_modifica = input("Vuoi modificare (M) o aggiungere (A) un voto? (M/A): ")
+                        
+                        # modifica
+                        if scelta_modifica == 'M':
+                            indice = int(input("Inserisci indice del voto da modificare: "))
+                            nuovo_voto = input("Inserisci il nuovo voto: ")
+                            alunno.modifica_voto(nome_selezionato, indice, nuovo_voto)
+                            break
+                        
+                        # aggiungo
+                        elif scelta_modifica == 'A':
+                            nuovo_voto = input("Inserisci il nuovo voto: ")
+                            alunno.aggiungi_voto(nome_selezionato, nuovo_voto)
+                            break
+
+                        else:
+                            # errore
+                            print("Scelta non valida! Riprova")
+            else:
+                # errore
+                print("Scelta non valida! Riprova")
+
     else: 
         # errore
         print("Scelta non valida! Riprova")
-
-
-
