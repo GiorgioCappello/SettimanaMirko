@@ -26,6 +26,8 @@ class Allievo(Persona):
 y = Allievo("Marius",23,"Terzo Dan")
 y.masterD()'''
 
+# Tre generazioni
+
 class Primo:
 
     tipo = 'macchina'
@@ -33,7 +35,7 @@ class Primo:
     def __init__(self,modello):
         self.modello = modello
     
-    def to_string(self):
+    def to_string1(self):
         print("Modello: " + self.modello)
 
 class Secondo(Primo):
@@ -42,7 +44,7 @@ class Secondo(Primo):
         super().__init__(modello)
         self.targa = targa
     
-    def to_string(self):
+    def to_string2(self):
         print("Targa: " + self.targa)
 
 class Terzo(Secondo):
@@ -51,12 +53,14 @@ class Terzo(Secondo):
         super().__init__(modello,targa)
         self.colore = colore
     
-    def to_string(self):
+    def to_string3(self):
+        x.to_string1()
+        y.to_string2()
         print("Colore: " + self.colore)
 
 x = Primo("BMW")
-x.to_string()
-y = Secondo("BMW","AA000AA")
-y.to_string()
-z = Terzo("BMW","AA000AA","blu")
-z.to_string()
+y = Secondo("Mercedes","BB000BB")
+z = Terzo("Wolksvagen","CC000CC","blu")
+
+
+z.to_string3()
