@@ -438,7 +438,7 @@ def switch_accesso():
 ############################## AREA DEMO ############################
 
 # inizializzazione dell' oggetto di lista task  
-task1 = Task('Esposizione App', '2023-05-25 09:00')
+task1 = Task('Esposizione App', '2023-05-25 11:00')
 task1.priorita = 'Alta'
 task2 = Task('Fare la spesa', '2023-05-25 18:15')
 to_do_list = ListaTask()  
