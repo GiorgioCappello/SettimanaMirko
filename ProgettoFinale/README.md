@@ -16,20 +16,20 @@ DI APP GESTIONE TASK CON SERVIZI CRUD**
 
 REGOLE DI GRUPPO
 
-1. COORDINAMENTO INTERNO:
+1. Coordinamento:
   - requisiti individuale preliminare e brainstorming collettivo;
   - pianificazione del tempo durante il brainstorming;
   - pianificazione delle task urgenti;
   - comunicazioni agili eliminando barriere gerarchiche con il massimo rispetto reciproco;
   - gestione dello sprint in base alle tempistiche con assegnazione task.
 
-2. COMMIT ON GITHUB:
+2. Commit on GitHub:
   - pull a inizio lavoro, con file separati;
   - push dei file personali sulla cartella condivisa ogni aggiornamento importante;
   - il teamleader, o chi per sua vece, ha l'onere di unire i file compositi;
   - le cancellazioni solo ed esclusivamente se decise in gruppo.
 
-3. DOVE E QUANDO INSERIRE I COMMENTI:
+3. Dove e Quando inserire i Commenti:
   - uno per definire classe o funzione al di sopra delle stesse;
   - laterale se corti;
   - accanto agli script in caso di necessità per spiegare l'algoritmo;
@@ -41,9 +41,7 @@ REGOLE DI GRUPPO
   - nomi che abbiano un significato coerente;
   - raggruppamento del codice in base al tipo (classi, funzioni, test, etc...).
   
-5. FEATURES DA IMPLEMENTARE:
-  - possibilità di implementare più liste, ognuna con nome di riferimento o di categoria,
-    con relativa data di scadenza e le diverse task all'interno;
+5. FEATURE DA IMPLEMENTARE:
   - inserimento di un alert per i giorni mancanti alla scadenza;
   - inserimento di un filtro controllo per le task e le liste attive, mostrando anche una deadline;
   - inserimento di un filtro task scaduta/non scaduta;
@@ -51,13 +49,13 @@ REGOLE DI GRUPPO
   - implentazione di funzione di import/export per file di backup;
   - ordinamento delle liste per priorità, scadenza, o da completare;
   - visualizzazione del progressivo dell'esecuzione delle liste (in percentuale);
-  - gestione di più profili (nome utente e password).
+  - gestione di più profili (nome utente, password e mail).
 
 
 
 
 ____________________________________________________________
-MANUALE DI ISTRUZIONI - REALEASE 2.0
+MANUALE DI ISTRUZIONI - REALEASE 3.0
 ____________________________________________________________
 L'app si avvia dal menu di accesso (1)
 
@@ -79,6 +77,48 @@ ____________________________________________________________
 Una volta entrati nell' app appare il menu Principale con le seguenti funzioni:
 
 Benvenuto nell' App della To Do List.
+1. Aggiungi una lista
+2. Visualizza tutte le liste
+3. Elimina lista
+4. Modifica la lista      
+0. Torna indietro
+
+
+____________________________________________________________
+1.1.1 --> Aggiungi una lista
+____________________________________________________________
+Permette di creare una lista specificandone il nome ed entrando nella 
+switch modifica task (1.1.4)
+Torna poi al Menu di Benvenuto (1.1 Entra)
+
+
+____________________________________________________________
+1.1.2 --> Visualizza tutte le liste
+____________________________________________________________
+Permette di visualizzare le singole liste finora memorizzate all'interno dell' App. 
+Se l'elenco è vuoto, visualizza un messaggio che dichiara l'assenza di liste.
+Torna poi al Menu di Benvenuto (1.1 Entra)
+
+
+____________________________________________________________
+1.1.3 --> Elimina Lista
+____________________________________________________________
+Permette di eliminare una lista dall'elenco delle Liste selezionandola 
+tramite l'indice di riferimento.
+Se l'elenco è vuoto, riporta un messaggio di avviso.
+Torna poi al Menu di Benvenuto (1.1 Entra)
+
+
+____________________________________________________________
+1.1.4 --> Modifica la Lista
+____________________________________________________________
+Permette di modificare una task dalla Lista delle task selezionandola 
+tramite l'indice di riferimento.
+
+Una volta selezionata la task da modificare, appare il seguente menu di modifica:
+
+
+Stai modificando la lista: 'nome_lista'
 1. Aggiungi una task
 2. Visualizza tutte le task
 3. Elimina Task
@@ -86,35 +126,35 @@ Benvenuto nell' App della To Do List.
 5. Aggiorna Status della Task        
 0. Torna indietro
 
-
+Dove 'nome_lista' è il nome della lista scelta
 ____________________________________________________________
-1.1.1 --> Aggiungi una task
+1.1.4.1 --> Aggiungi una task
 ____________________________________________________________
 Permette di creare una task specificandone il contenuto, la data di scadenza,
 e la priorità (facoltativa).
-Torna poi al Menu di Benvenuto (1.1 Entra)
+Torna poi al Menu di modifica task (1.1.4)
 
 
 ____________________________________________________________
-1.1.2 --> Visualizza tutte le task
+1.1.4.2 --> Visualizza tutte le task
 ____________________________________________________________
 Permette di visualizzare le singole task finora memorizzate all'interno della
 Lista Task dell' App. Se la lista è vuota, visualizza un messaggio che dichiara
 l'assenza di task.
-Torna poi al Menu di Benvenuto (1.1 Entra)
+Torna poi al Menu di modifica task (1.1.4)
 
 
 ____________________________________________________________
-1.1.3 --> Elimina Task
+1.1.4.3 --> Elimina Task
 ____________________________________________________________
 Se la lista delle task ha almeno un elemento, permette di eliminare una task
 dalla Lista delle task selezionandola tramite l'indice di riferimento.
 Se la lista è vuota, riporta un messaggio di avviso.
-Torna poi al Menu di Benvenuto (1.1 Entra)
+Torna poi al Menu di modifica task (1.1.4)
 
 
 ____________________________________________________________
-1.1.4 --> Modifica la Task
+1.1.4.4 --> Modifica la Task
 ____________________________________________________________
 Se la lista delle task ha almeno un elemento, permette di modificare una task
 dalla Lista delle task selezionandola tramite l'indice di riferimento.
@@ -128,16 +168,16 @@ Questa è l'area di modifica:
 
 
 ____________________________________________________________
-1.1.4.1 --> Modifica completa di una task
+1.1.4.4.1 --> Modifica completa di una task
 ____________________________________________________________
 Arriveranno dei messaggi di inserimento input all'utente per indicare il contenuto della task,
 i dati della scadenza, e la priorità aggiornata, per modificare completamente il task
 precedentemente selezionato.
-Torna poi al Menu di Benvenuto (1.1 Entra)
+Torna poi al Menu di modifica task (1.1.4)
 
 
 ____________________________________________________________
-1.1.4.2 --> Modifica solo un elemento di una task
+1.1.4.4.2 --> Modifica solo un elemento di una task
 ____________________________________________________________
 Apparirà all' utente il seguente menu di navigazione:
 
@@ -149,20 +189,20 @@ Questa è l'area di modifica parziale:
 
 L'utente potrà selezionare cosa modificare della task precedentemente indicata.
 In base alla selezione, avverrà la modifica e il task verrà visualizzato aggiornato.
-Alla fine di qualsiasi modifica fatta si torna in loop a questo menu (1.1.4.2)
-finchè l'utente non seleziona 0 che riporta al Menu di Benvenuto (1.1 Entra)
+Alla fine di qualsiasi modifica fatta si torna in loop a questo menu (1.1.4.4.2)
+finchè l'utente non seleziona 0 che riporta al Menu di modifica task (1.1.4)
 
 
 ____________________________________________________________
-1.1.4.0 --> Torna indietro
+1.1.4.4.0 --> Torna indietro
 ____________________________________________________________
 riporta al Menu di Benvenuto (1.1 Entra)
 
 
 ____________________________________________________________
-1.1.5 --> Aggiorna Status della Task
+1.1.4.5 --> Aggiorna Status della Task
 ____________________________________________________________
 Se la lista delle task ha almeno un elemento, permette di aggiornare lo status
 di una task dalla Lista delle task selezionandola tramite l'indice di riferimento.
 Eseguita l'operazione, viene visualizzata la task aggiornata con lo status,
-e si torna poi al Menu di Benvenuto (1.1 Entra)
+e si torna poi al Menu di modifica task (1.1.4)
